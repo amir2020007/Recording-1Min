@@ -1,0 +1,37 @@
+name: webull-record-1m
+
+on:
+  schedule:
+    - cron: "12 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: webull-recorder
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install webull-openapi-python-sdk google-api-python-client google-auth
+      - name: Record bars
+        env:
+          WEBULL_APP_KEY: ${{ secrets.WEBULL_APP_KEY }}
+          WEBULL_APP_SECRET: ${{ secrets.WEBULL_APP_SECRET }}
+          GDRIVE_SA_JSON: ${{ secrets.GDRIVE_SA_JSON }}
+          GDRIVE_FOLDER_ID: ${{ secrets.GDRIVE_FOLDER_ID }}
+        run: python webull_recorder_2026-07-06.py
+      - name: Commit CSVs
+        run: |
+          git config user.name "recorder-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add data/
+          git diff --cached --quiet || git commit -m "bars $(date -u +%F_%H:%M)"
+          git pull --rebase && git push
