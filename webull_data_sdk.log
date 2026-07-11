@@ -471,3 +471,14 @@
 140510313687936 2026-07-11 00:08:36,515 webull.core.http.initializer.token.token_manager INFO save_token_to_local writing token to local file. token:8777ab******b130d3 expires:1784991062769 status:NORMAL
 140510313687936 2026-07-11 00:08:36,516 webull.core.http.initializer.token.token_manager INFO save_token_to_local writing token to file completed.
 140510313687936 2026-07-11 00:08:36,516 webull.core.http.initializer.token.token_manager INFO init_token finished. token:8777ab******b130d3 expires:1784991062769 status:NORMAL
+140584435440512 2026-07-11 03:42:15,400 webull.core.http.initializer.client_initializer INFO _check_token_enable result is True
+140584435440512 2026-07-11 03:42:15,401 webull.core.http.initializer.token.token_storage INFO storage_token uses the default configuration, conf.
+140584435440512 2026-07-11 03:42:15,401 webull.core.http.initializer.token.token_storage INFO storage_token initialized path:/home/runner/work/Recording-1Min/Recording-1Min/conf/token.txt.
+140584435440512 2026-07-11 03:42:15,401 webull.core.http.initializer.token.token_storage WARNING storage_token Note: The token file already exists, the latest token configuration will be overwritten and written to the token file after successful 2FA verification. path:/home/runner/work/Recording-1Min/Recording-1Min/conf/token.txt.
+140584435440512 2026-07-11 03:42:15,401 webull.core.http.initializer.token.token_manager INFO load_token_from_local reading token from file...
+140584435440512 2026-07-11 03:42:15,401 webull.core.http.initializer.token.token_manager INFO load_token_from_local read local token result. token:8777ab******b130d3 expires:1784991062769 status:NORMAL
+140584435440512 2026-07-11 03:42:16,252 webull.core.http.initializer.token.token_manager INFO fetch_token_from_server create_token result. token:8777ab******b130d3 expires:1784991062769 status:NORMAL
+140584435440512 2026-07-11 03:42:16,253 webull.core.http.initializer.token.token_manager INFO fetch_token_from_server create_token status is verified, no further check required, returning directly. token:8777ab******b130d3 expires:1784991062769 status:NORMAL
+140584435440512 2026-07-11 03:42:16,253 webull.core.http.initializer.token.token_manager INFO save_token_to_local writing token to local file. token:8777ab******b130d3 expires:1784991062769 status:NORMAL
+140584435440512 2026-07-11 03:42:16,254 webull.core.http.initializer.token.token_manager INFO save_token_to_local writing token to file completed.
+140584435440512 2026-07-11 03:42:16,254 webull.core.http.initializer.token.token_manager INFO init_token finished. token:8777ab******b130d3 expires:1784991062769 status:NORMAL
