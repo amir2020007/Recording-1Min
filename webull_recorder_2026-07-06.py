@@ -9,7 +9,7 @@ from zoneinfo import ZoneInfo
 from webull.core.client import ApiClient
 from webull.data.data_client import DataClient
 
-TICKERS = ["SOXX", "AMD", "MU", "MRVL", "BE", "SNDK"]
+TICKERS = ["SOXX"]
 CATEGORY = {"SOXX": "US_ETF"}  # default US_STOCK; SOXX is an ETF
 ET = ZoneInfo("America/New_York")
 DATA_DIR = "data"
